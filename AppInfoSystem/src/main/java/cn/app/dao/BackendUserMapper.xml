@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.appsys.dao.BackendUserMapper">
+	<select id="getBackendUserList" resultType="BackendUser">
+		select * from backend_user
+	</select>
+	<insert id="addBackendUser" parameterType="BackendUser">
+		insert into backend_user
+		(userCode,userName,userType,createdBy,creationDate,modifyBy,modifyDate,userPassword)
+		values
+		(#{userCode},#{userName},#{userType},#{createdBy},#{creationDate},#{modifyBy},#{modifyDate},#{userPassword})
+	</insert>
+	<select id="getBackendUserById" resultType="BackendUser" parameterType="BackendUser">
+		select * from backend_user where id=#{id}
+	</select>
+</mapper>
