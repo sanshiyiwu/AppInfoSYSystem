@@ -2,7 +2,7 @@ package cn.app.service;
 
 import java.util.List;
 
-import cn.app.pojo.BackendUser;
+import cn.app.entity.BackendUser;
 
 /**
  * 后台用户Service层

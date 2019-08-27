@@ -15,7 +15,7 @@ import cn.app.service.DevUserService;
  *
  */
 @Controller
-@RequestMapping("/dev/index")
+@RequestMapping("/dev_user/index")
 public class DevUserController {
 	/**
 	 * 打印日志文件
@@ -30,7 +30,7 @@ public class DevUserController {
 	@RequestMapping(value="/index")
 	public String index(){
 		log.info("正在跳转至首页页面..");
-		return "dev/index";
+		return "dev_user/index";
 	}
 	
 	

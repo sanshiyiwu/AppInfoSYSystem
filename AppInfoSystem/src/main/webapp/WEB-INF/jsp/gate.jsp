@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="<%=request.getContextPath()%>/statics/localjs/jquery.min.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/statics/js/jquery.min.js" type="text/javascript"></script>
 <title>APP信息管理平台界面</title>
 </head>
 <body style="background:#F7F7F7;">
@@ -18,10 +18,10 @@
 </body>
 <script>
 	function showBackendLogin(){
-		$("body").load("<%=request.getContextPath()%>/backend/login")
+		$("body").load("<%=request.getContextPath()%>/backend_user/login");
 	}
 	function showDevLogin(){
-		$("body").load("<%=request.getContextPath()%>/dev/login")
+		$("body").load("<%=request.getContextPath()%>/dev_user/login");
 	}
 </script>
 </html>

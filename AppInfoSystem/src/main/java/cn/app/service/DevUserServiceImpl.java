@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import cn.app.dao.DevUserMapper;
-import cn.app.pojo.DevUser;
+import cn.app.entity.DevUser;
 
 /**
  * 开发者用户Service实现层

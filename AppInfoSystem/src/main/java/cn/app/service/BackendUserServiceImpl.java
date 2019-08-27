@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import cn.app.dao.BackendUserMapper;
-import cn.app.pojo.BackendUser;
+import cn.app.entity.BackendUser;
 
 /**
  * 后台用户Service实现层

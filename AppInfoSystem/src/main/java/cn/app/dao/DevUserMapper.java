@@ -2,7 +2,9 @@ package cn.app.dao;
 
 import java.util.List;
 
-import cn.app.pojo.DevUser;
+import org.springframework.stereotype.Repository;
+
+import cn.app.entity.DevUser;
 
 
 /**
@@ -10,6 +12,7 @@ import cn.app.pojo.DevUser;
  * @author lenovo
  *
  */
+@Repository("devUserMapper")
 public interface DevUserMapper {
 	/**
 	 * 获取开发者用户列表(登录)

@@ -17,7 +17,7 @@ import cn.app.service.BackendUserService;
  *
  */
 @Controller
-@RequestMapping("/backend/index")
+@RequestMapping("/backend_user/index")
 public class BackendUserController {
 	/**
 	 * 打印日志文件
@@ -32,7 +32,7 @@ public class BackendUserController {
 	@RequestMapping(value="/index")
 	public String index(){
 		log.info("正在跳转至首页页面..");
-		return "backend/index";
+		return "backend_user/index";
 	}
 	
 	

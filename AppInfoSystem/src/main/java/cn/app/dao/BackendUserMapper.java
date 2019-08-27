@@ -2,13 +2,16 @@ package cn.app.dao;
 
 import java.util.List;
 
-import cn.app.pojo.BackendUser;
+import org.springframework.stereotype.Repository;
+
+import cn.app.entity.BackendUser;
 
 /**
  * 后台用户Dao层
  * @author lenovo
  *
  */
+@Repository("backendUserMapper")
 public interface BackendUserMapper {
 	/**
 	 * 获取后台用户列表(登录)
