@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  */
 @Controller
-@RequestMapping()	
+@RequestMapping("/test1")
 public class TestController {
 	private Logger log = Logger.getLogger(TestController.class);
 	
-	@RequestMapping(value = "/index")
+	@RequestMapping(value = "/test")
 	public String test() {
 		log.info("进入test方法;参数:>>");
-		return "index";
+		return "test";
 	}
 }

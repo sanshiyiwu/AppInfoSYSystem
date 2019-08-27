@@ -22,17 +22,17 @@
 		<property name="username" value="${user}"></property>
 		<property name="password" value="${password}"></property>
 	</bean>
-	<!-- 配置SqlSessionFactory -->
+	<!-- 配置sqlSessionFactory -->
 	<bean id="sqlSessionFactory" 
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
-		<property name="configLocation" 
+		<property name="configLocation"
 			value="classpath:mybatis-config.xml"></property>
 		<property name="mapperLocations">
 			<list>
-				<value>classpath:cn.app.dao**/*.xml </value>
+				<value>classpath:cn/app/dao/**/*.xml</value>
 			</list>
-		</property>	
+		</property>
 	</bean>
 	<!-- 配置 MapperScannerConfigurer(自动装配getmanager)-->
 	<bean 
