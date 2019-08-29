@@ -2,6 +2,8 @@ package cn.app.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import cn.app.entity.BackendUser;
 
 /**
@@ -23,9 +25,16 @@ public interface BackendUserService {
 	 */
 	public Integer addBackendUser(BackendUser backendUser);
 	/**
+	 * 注册验证
+	 * @param user
+	 * @return
+	 */
+	public BackendUser checkUserCode(@Param("userCode")String userCode);
+	/**
 	 * 根据ID查询后台用户
 	 * @param id
 	 * @return
 	 */
 	public BackendUser getBackendUserById(Integer id);
+	
 }

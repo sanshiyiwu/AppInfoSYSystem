@@ -36,10 +36,17 @@ public class DevUserServiceImpl implements DevUserService {
 		return devUserMapper.addDevUser(devUser);
 	}
 	/**
+	 * 注册验证
+	 */
+	public DevUser checkUserCode(String devCode) {
+		return devUserMapper.checkUserCode(devCode);
+	}
+	/**
 	 * 根据ID查询开发者用户
 	 */
 	public DevUser getDevUserById(Integer id) {
 		return devUserMapper.getDevUserById(id);
 	}
+	
 	
 }

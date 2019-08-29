@@ -2,8 +2,10 @@ package cn.app.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import cn.app.entity.BackendUser;
 import cn.app.entity.DevUser;
 
 
@@ -26,6 +28,12 @@ public interface DevUserMapper {
 	 * @return
 	 */
 	public Integer addDevUser(DevUser devuser);
+	/**
+	 * 注册验证
+	 * @param user
+	 * @return
+	 */
+	public DevUser checkUserCode(@Param("devCode")String devCode);
 	/**
 	 * 根据ID查询开发者用户
 	 * @param id

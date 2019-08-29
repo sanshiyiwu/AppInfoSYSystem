@@ -37,6 +37,10 @@ public class AppInfo {
 	 */
 	private Date updateDate;
 	/**
+	 *	状态
+	 */
+	private Integer status;
+	/**
 	 * 用户ID
 	 */
 	private Integer devId;
@@ -238,6 +242,12 @@ public class AppInfo {
 	}
 	public void setVersionId(Integer versionId) {
 		this.versionId = versionId;
+	}
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 	
 	
