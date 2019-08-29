@@ -36,5 +36,17 @@ public interface BackendUserService {
 	 * @return
 	 */
 	public BackendUser getBackendUserById(Integer id);
+	/**
+	 * 修改用户
+	 * @param backendUser
+	 * @return
+	 */
+	public Integer updBackendUser(BackendUser backendUser);
+	/**
+	 * 删除用户
+	 * @param id
+	 * @return
+	 */
+	public Integer delBackendUser(Integer id);
 	
 }

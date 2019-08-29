@@ -16,4 +16,19 @@
 	<select id="checkUserCode" resultType="BackendUser" parameterType="string">
 		select * from backend_user where userCode=#{userCode}
 	</select>
+	<update id="updBackendUser" parameterType="BackendUser">
+		update backend_user
+		set userCode=#{userCode},
+		userName=#{userName},
+		userType=#{userType},
+		createdBy=#{createdBy},
+		creationDate=#{creationDate},
+		modifyBy=#{modifyBy},
+		modifyDate=#{modifyDate},
+		userPassword=#{userPassword}
+		where id=#{id}
+	</update>
+	<delete id="delBackendUser" parameterType="BackendUser">
+		delete * from backend_user where id=#{id}
+	</delete>
 </mapper>

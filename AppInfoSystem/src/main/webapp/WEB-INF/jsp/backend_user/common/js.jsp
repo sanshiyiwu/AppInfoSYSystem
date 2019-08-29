@@ -11,4 +11,9 @@
 
     <!-- Custom Theme Scripts -->
     <script src="${pageContext.request.contextPath }/statics/js/custom.min.js"></script>
+    <script>
+    	function showBackend_userList(){
+    		$("#content").load("<%=request.getContextPath()%>/backend_user/index/showBackend_userList");
+    	}
+    </script>
   

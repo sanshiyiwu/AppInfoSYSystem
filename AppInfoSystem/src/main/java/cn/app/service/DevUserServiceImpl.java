@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import cn.app.dao.DevUserMapper;
 import cn.app.entity.DevUser;
+import cn.app.entity.DevUser;
 
 /**
  * 开发者用户Service实现层
@@ -46,6 +47,18 @@ public class DevUserServiceImpl implements DevUserService {
 	 */
 	public DevUser getDevUserById(Integer id) {
 		return devUserMapper.getDevUserById(id);
+	}
+	/**
+	 * 修改用户
+	 */
+	public Integer updDevUser(DevUser devUser) {
+		return devUserMapper.updDevUser(devUser);
+	}
+	/**
+	 * 删除用户
+	 */
+	public Integer delDevUser(Integer id) {
+		return devUserMapper.delDevUser(id);
 	}
 	
 	

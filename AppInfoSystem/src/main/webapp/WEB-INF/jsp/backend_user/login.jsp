@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,10 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
  	<link href="<%=request.getContextPath() %>/statics/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/statics/fonts/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/statics/css/animate.min.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/statics/css/custom.css" rel="stylesheet">
-    <link href="<%=request.getContextPath() %>/statics/css/icheck/flat/green.css" rel="stylesheet">
+    <link href="<%=request.getContextPath() %>/statics/localcss/font-awesome.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath() %>/statics/localcss/animate.min.css" rel="stylesheet">
+    <!-- Custom styling plus plugins -->
+    <link href="<%=request.getContextPath() %>/statics/localcss/green.css" rel="stylesheet">
+    <link href="<%=request.getContextPath() %>/statics/localcss/custom.css" rel="stylesheet">
     <script src="<%=request.getContextPath()%>/statics/js/jquery.min.js" type="text/javascript"></script>
 <title>APP后台管理系统界面</title>
 </head>
@@ -24,7 +25,7 @@
         <div id="wrapper">
             <div id="login" class="animate form">
                 <section class="login_content" id="login">
-                    <form action="javascript:;">
+                    <form action="backend_user/backLoginCheck" method="post">
                         <h1>APP后台管理系统</h1>
                         <div>
                             <input type="text" class="form-control" placeholder="用户名" required="" name="name"/>
@@ -49,7 +50,7 @@
             </div>
             <div id="register" class="animate form">
                 <section class="login_content" id="regist">
-                    <form action="javascript:;" id="backRegistForm">
+                    <form action="backend_user/backRegistSave" id="backRegistForm">
                         <h1>后台管理系统注册</h1>
                         <div>
                         	<input type="hidden" value="" name="id">
@@ -79,25 +80,15 @@
 	function back(){
 		$("body").load("<%=request.getContextPath()%>/");
 	}
-	$("#login>form").submit(function(){
-		$.ajax({
-			url:"<%=request.getContextPath() %>/backend_user/backLoginCheck",
-			data:$("#login>form").serialize(),
-			type:"POST",
-			dataType:"html",
-			success:function(data){
-				$("body").html(data);
-			}
-		});
-	});
 	$("#userCode").blur(checkBackUserCode);
 	function checkBackUserCode(){
 		var userCode=$("#userCode").val();
 		$.ajax({
-			url:"<%=request.getContextPath() %>/backend_user/backRegistCheck",
+			url:"<%=request.getContextPath()%>/backend_user/backRegistCheck",
 			data:{"userCode":userCode},
 			type:"get",
 			dataType:"json",
+			contentType:false,
 			success:function(data){
 				if(data.userCode=="exist"){
 					$("#userCode").next().html("用户已存在！");
@@ -111,20 +102,6 @@
 			}
 		});
 	};
-	$("#regist>form").submit(function(){
-		var data=new FormData(document.getElementById("backRegistForm"));
-		$.ajax({
-			url:"<%=request.getContextPath()%>/backend_user/backRegistSave",
-			data:data,
-			type:"POST",
-			dataType:"html",
-			processData:false,
-			contentType:false,
-			success:function(data){
-				$("body").html(data);
-			}
-		});
-	});
-	$("")
+
 	</script>
 </html>

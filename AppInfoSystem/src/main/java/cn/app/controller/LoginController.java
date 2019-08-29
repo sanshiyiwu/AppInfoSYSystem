@@ -58,7 +58,7 @@ public class LoginController {
 	/**
 	 * 登录检查开发者用户名和密码
 	 */
-	@RequestMapping(value="/dev_user/devLoginCheck",method = RequestMethod.POST)
+	@RequestMapping(value="/devLoginCheck",method = RequestMethod.POST)
 	public String devLoginCheck(Model model,@RequestParam String name,
 			@RequestParam String password,HttpSession session){
 		log.info("正在检查用户名为"+name+"密码为"+password+"的开发者用户...");
@@ -69,7 +69,7 @@ public class LoginController {
 				session.setAttribute("presentCust", devUser1);
 				log.info("登陆成功！");
 				log.info("正在跳转至开发者平台首页页面..");
-				return "dev_user/index";
+				return "redirect:/dev_user/index";
 			}
 		}
 		log.info("登陆失败！请检查开发者用户名和密码！");
@@ -105,7 +105,7 @@ public class LoginController {
 			log.info("注册成功！正在跳转至开发者用户首页..");
 			model.addAttribute("presentCust", user);
 			session.setAttribute("presentCust", user);
-			return "dev_user/index";
+			return "redirect:/dev_user/index";
 		}else{
 			return "dev_user/login";
 		}
@@ -135,7 +135,7 @@ public class LoginController {
 				session.setAttribute("presentCust", backendUser1);
 				log.info("登陆成功！");
 				log.info("正在跳转至后台管理系统首页页面..");
-				return "backend_user/index";
+				return "redirect:/backend_user/index";
 			}
 		}
 		log.info("登陆失败！请检查后台管理系统用户名和密码！");
@@ -171,7 +171,7 @@ public class LoginController {
 			log.info("注册成功！正在跳转至后台管理系统首页..");
 			model.addAttribute("presentCust", user);
 			session.setAttribute("presentCust", user);
-			return "backend_user/index";
+			return "redirect:/backend_user/index";
 		}else{
 			return "backend_user/login";
 		}

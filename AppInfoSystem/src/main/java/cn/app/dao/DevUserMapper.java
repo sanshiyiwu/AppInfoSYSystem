@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import cn.app.entity.BackendUser;
+import cn.app.entity.DevUser;
 import cn.app.entity.DevUser;
 
 
@@ -40,4 +40,12 @@ public interface DevUserMapper {
 	 * @return
 	 */
 	public DevUser getDevUserById(Integer id);
+	/**
+	 *修改开发者用户
+	 */
+	public Integer updDevUser(DevUser devUser);
+	/**
+	 * 删除开发者用户
+	 */
+	public Integer delDevUser(Integer id);
 }

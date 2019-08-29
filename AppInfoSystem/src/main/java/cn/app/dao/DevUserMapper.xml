@@ -16,4 +16,19 @@
 	<select id="checkUserCode" parameterType="String" resultType="DevUser">
 		select * from dev_user where devCode=#{devCode}
 	</select>
+	<update id="updDevUser" parameterType="DevUser">
+		update dev_user
+		set devCode=#{userCode},
+		devName=#{userName},
+		devType=#{userType},
+		createdBy=#{createdBy},
+		creationDate=#{creationDate},
+		modifyBy=#{modifyBy},
+		modifyDate=#{modifyDate},
+		devPassword=#{devPassword}
+		where id=#{id}
+	</update>
+	<delete id="delDevUser" parameterType="DevUser">
+		delete * from dev_user where id=#{id}
+	</delete>
 </mapper>

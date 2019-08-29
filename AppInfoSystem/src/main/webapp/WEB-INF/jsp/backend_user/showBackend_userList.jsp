@@ -9,7 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table id="userList" style="border:1px solid">
+	<div id="table">
+	<h3>后台用户列表界面</h3><br>
+	<input type="button" class="btn btn-primary" value="增加后台用户" onclick="javascript:addBackend_user();">
+	<table id="userList" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed" cellspacing="0" width="100%" role="grid" aria-describedby="datatable-responsive_info" style="width: 100%;">
 		<thead>
 			<tr>
 				<td>序号</td>
@@ -31,7 +34,7 @@
 					<td>${backendUser.userName}</td>
 					<td>${backendUser.userType}</td>
 					<td>${backendUser.createdBy}</td>
-					<td>${backendUser.createdDate}</td>
+					<td>${backendUser.creationDate}</td>
 					<td>${backendUser.modifyBy}</td>
 					<td>${backendUser.modifyDate}</td>
 					<td>
@@ -42,13 +45,17 @@
 			</tbody>
 		</c:forEach>
 	</table>
+	</div>
 </body>
 	<script>
 		function updateUser(id){
-			$("body").load("<%=request.getContextPath()%>/backend_user/updUser/"+id);
+			$("#content").load("<%=request.getContextPath()%>/backend_user/index/updBackend_user?id="+id);
 		}
 		function deleteUser(id){
-			$("body").load("<%=request.getContextPath()%>/backend_user/delUser/"+id);
+			$("#content").load("<%=request.getContextPath()%>/backend_user/index/delBackend_user?id="+id);
 		}
+		function addBackend_user(){
+    		$("#content").load("<%=request.getContextPath()%>/backend_user/index/addBackend_user")
+    	}
 	</script>
 </html>

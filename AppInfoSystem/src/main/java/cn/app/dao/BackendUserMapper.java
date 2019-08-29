@@ -38,4 +38,12 @@ public interface BackendUserMapper {
 	 * @return
 	 */
 	public BackendUser getBackendUserById(Integer id);
+	/**
+	 *修改后台用户
+	 */
+	public Integer updBackendUser(BackendUser backendUser);
+	/**
+	 * 删除后台用户
+	 */
+	public Integer delBackendUser(Integer id);
 }
