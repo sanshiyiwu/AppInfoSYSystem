@@ -13,4 +13,25 @@
 	<select id="getDevUserById" resultType="DevUser" parameterType="DevUser">
 		select * from dev_user where id=#{id}
 	</select>
+<<<<<<< HEAD
+=======
+	<select id="checkUserCode" parameterType="String" resultType="DevUser">
+		select * from dev_user where devCode=#{devCode}
+	</select>
+	<update id="updDevUser" parameterType="DevUser">
+		update dev_user
+		set devCode=#{userCode},
+		devName=#{userName},
+		devType=#{userType},
+		createdBy=#{createdBy},
+		creationDate=#{creationDate},
+		modifyBy=#{modifyBy},
+		modifyDate=#{modifyDate},
+		devPassword=#{devPassword}
+		where id=#{id}
+	</update>
+	<delete id="delDevUser" parameterType="DevUser">
+		delete * from dev_user where id=#{id}
+	</delete>
+>>>>>>> 2d2a908755195c40a52c0b3341f162e0e02aee6b
 </mapper>

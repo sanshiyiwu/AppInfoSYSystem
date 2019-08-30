@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -1318,3 +1319,24 @@
     <!-- /footer content -->
 </body>
 </html>
+=======
+<%@include file="common/header.jsp" %>
+<div class="page-title">
+	<div class="title_left">
+		<h3>
+			欢迎你：${presentCust.userName }<strong> | 角色：
+			<c:if test="${presentCust.userType==1}">
+			管理员用户
+			</c:if>
+			<c:if test="${presentCust.userType==2}">
+			普通用户
+			</c:if>
+			</strong>
+		</h3>
+	</div>
+</div>
+<br>
+<div class="clearfix" id="content"></div>        
+<%@include file="common/footer.jsp" %>  
+     
+>>>>>>> 2d2a908755195c40a52c0b3341f162e0e02aee6b

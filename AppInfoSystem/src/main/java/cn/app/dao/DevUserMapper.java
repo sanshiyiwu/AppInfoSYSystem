@@ -4,6 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+<<<<<<< HEAD
+=======
+import cn.app.entity.DevUser;
+>>>>>>> 2d2a908755195c40a52c0b3341f162e0e02aee6b
 import cn.app.entity.DevUser;
 
 
@@ -32,6 +36,17 @@ public interface DevUserMapper {
 	 * @return
 	 */
 	public DevUser getDevUserById(Integer id);
+<<<<<<< HEAD
 	
 	
+=======
+	/**
+	 *修改开发者用户
+	 */
+	public Integer updDevUser(DevUser devUser);
+	/**
+	 * 删除开发者用户
+	 */
+	public Integer delDevUser(Integer id);
+>>>>>>> 2d2a908755195c40a52c0b3341f162e0e02aee6b
 }

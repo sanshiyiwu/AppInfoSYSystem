@@ -40,5 +40,17 @@ public class BackendUserServiceImpl implements BackendUserService{
 	public BackendUser getBackendUserById(Integer id) {
 		return backendUserMapper.getBackendUserById(id);
 	}
+	/**
+	 * 修改用户
+	 */
+	public Integer updBackendUser(BackendUser backendUser) {
+		return backendUserMapper.updBackendUser(backendUser);
+	}
+	/**
+	 * 删除用户
+	 */
+	public Integer delBackendUser(Integer id) {
+		return backendUserMapper.delBackendUser(id);
+	}
 	
 }

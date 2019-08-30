@@ -2,6 +2,10 @@ package cn.app.entity;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.alibaba.fastjson.annotation.JSONField;
+
 /**
  * 后台用户表
  * @author lenovo
@@ -31,6 +35,8 @@ public class BackendUser {
 	/**
 	 * 创建时间
 	 */
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@JSONField(format="yyyy-MM-dd")
 	private Date creationDate;
 	/**
 	 * 修改者
@@ -39,6 +45,8 @@ public class BackendUser {
 	/**
 	 * 修改时间
 	 */
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@JSONField(format="yyyy-MM-dd")
 	private Date modifyDate;
 	/**
 	 * 后台用户密码
