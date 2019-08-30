@@ -1,5 +1,7 @@
 package cn.app.dao;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Repository;
 
 import cn.app.entity.AppInfo;
@@ -35,4 +37,10 @@ public interface AppInfoMapper {
 	 * @return
 	 */
 	public AppInfo getAppInfoById(Integer id);
+	/**
+	 * 修改最新版本号id
+	 * @param id
+	 * @return
+	 */
+	public Integer updeteVersionId(Map<String, Object> map);
 }

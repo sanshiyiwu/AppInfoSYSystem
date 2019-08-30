@@ -1,18 +1,15 @@
-package cn.app.dao;
+package cn.app.service;
 
 import java.util.List;
-
-import org.springframework.stereotype.Repository;
 
 import cn.app.entity.BackendUser;
 
 /**
- * 后台用户Dao层
+ * 后台用户Service层
  * @author lenovo
  *
  */
-@Repository("backendUserMapper")
-public interface BackendUserMapper {
+public interface BackendUserService {
 	/**
 	 * 获取后台用户列表(登录)
 	 * @param user

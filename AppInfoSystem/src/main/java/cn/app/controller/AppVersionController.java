@@ -3,7 +3,9 @@ package cn.app.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -124,7 +126,16 @@ public class AppVersionController {
 			appVersion.setAppId(appInfo.getId());
 			Integer result = appVersionMapper.addAppVersion(appVersion);
 			if(result==1) {
-				return "";
+				AppVersion appVersion_id = appVersionMapper.getAppVersion(appVersion);
+				Map<String, Object> map = new HashMap<String, Object>();
+				map.put("id", appVersion_id.getAppId());
+				map.put("versionId", appVersion_id.getId());
+				Integer result_c = appInfoMapper.updeteVersionId(map);
+				if(result_c == 1) {
+					return "dev_user/login";
+				}else {
+					return "app_version/addAppVersion";
+				}	
 			}else {
 				return "app_version/addAppVersion";
 			}

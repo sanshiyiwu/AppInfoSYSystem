@@ -15,4 +15,10 @@
 			#{publishStatus},#{versionInfo},#{apkLocPath},
 			#{createdBy},#{creationDate},#{appId},#{apkFileName)
 	</insert>
+	<!-- 获取App版本信息(添加versionid用) -->
+	<select id="getAppVersion" resultType="AppVersion"
+		parameterType="AppVersion">
+		select * from app_version where appId=#{appId} 
+		and versionNo=#{versionNo}
+	</select>
 </mapper>

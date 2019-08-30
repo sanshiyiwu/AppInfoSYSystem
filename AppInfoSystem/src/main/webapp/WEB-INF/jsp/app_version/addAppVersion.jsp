@@ -48,30 +48,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <c:forEach items="${appVersionList }" var="appVersion">
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <th scope="row">${appInfo.softwareName }</th>
+                                        <td>${appVersion.versionNo }</td>
+                                        <td>${appVersion.versionSize }</td>
+                                        <c:forEach items="${dataDictionaryList }" var="dataDictionary">
+                                        <c:if test="${dataDictionary.id == appVersion.publishStatus }">
+                                        <td>${dataDictionary.valueName }</td>
+                                        </c:if>
+                                        </c:forEach>
+                                        <td>${appVersion.downloadLink }</td>
+                                        <td>${appVersion.modifyDate }</td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
+                                 </c:forEach>   
                                 </tbody>
                             </table>
 
@@ -176,7 +166,6 @@
         $('#vfields').change(function () {
             $('form').toggleClass('mode2');
         }).prop('checked', false);
-
         $('#alerts').change(function () {
             validator.defaults.alerts = (this.checked) ? false : true;
             if (this.checked)

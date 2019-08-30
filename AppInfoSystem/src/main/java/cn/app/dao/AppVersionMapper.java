@@ -24,4 +24,10 @@ public interface AppVersionMapper {
 	 * @return
 	 */
 	public Integer addAppVersion(AppVersion appVersion);
+	/**
+	 * 获取App版本信息(添加versionid用)
+	 * @param appVersion
+	 * @return
+	 */
+	public AppVersion getAppVersion(AppVersion appVersion);
 }

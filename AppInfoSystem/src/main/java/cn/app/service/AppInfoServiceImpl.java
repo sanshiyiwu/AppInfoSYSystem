@@ -1,5 +1,7 @@
 package cn.app.service;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -51,6 +53,14 @@ public class AppInfoServiceImpl implements AppInfoService{
 	 */
 	public AppInfo getAppInfoById(Integer id) {
 		return appInfoMapper.getAppInfoById(id);
+	}
+	/**
+	 * 修改最新版本号id
+	 * @param id
+	 * @return
+	 */
+	public Integer updeteVersionId(Map<String, Object> map) {
+		return appInfoMapper.updeteVersionId(map);
 	}
 
 }

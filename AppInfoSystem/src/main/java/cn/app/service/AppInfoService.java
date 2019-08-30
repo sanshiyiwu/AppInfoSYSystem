@@ -1,5 +1,7 @@
 package cn.app.service;
 
+import java.util.Map;
+
 import cn.app.entity.AppInfo;
 /**
  * app基础信息逻辑层接口
@@ -34,4 +36,10 @@ public interface AppInfoService {
 	 * @return
 	 */
 	public AppInfo getAppInfoById(Integer id);
+	/**
+	 * 修改最新版本号id
+	 * @param id
+	 * @return
+	 */
+	public Integer updeteVersionId(Map<String, Object> map);
 }

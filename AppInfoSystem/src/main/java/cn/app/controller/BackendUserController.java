@@ -6,31 +6,33 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import cn.app.service.DevUserService;
+import cn.app.service.BackendUserService;
+
+
 
 
 /**
- * 开发者用户控制器
+ * 后台管理系统用户控制器
  * @author lenovo
  *
  */
 @Controller
-@RequestMapping("/dev_user/index")
-public class DevUserController {
+@RequestMapping("/backend_user/index")
+public class BackendUserController {
 	/**
 	 * 打印日志文件
 	 */
-	private Logger log=Logger.getLogger(DevUserController.class);
+	private Logger log=Logger.getLogger(BackendUserController.class);
 	/**
-	 * 获取开发者用户服务DevUserService
+	 * 获取后台管理系统用户服务BackendUserService
 	 */
 	@Resource
-	private DevUserService devUserService;
+	private BackendUserService backendUserService;
 	
 	@RequestMapping(value="/index")
 	public String index(){
 		log.info("正在跳转至首页页面..");
-		return "dev_user/index";
+		return "backend_user/index";
 	}
 	
 	
