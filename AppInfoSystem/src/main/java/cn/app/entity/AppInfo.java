@@ -9,6 +9,16 @@ import java.util.Date;
  */
 public class AppInfo {
 	/**
+	 *	 状态
+	 */
+	private  Integer status;
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	/**
 	 * 序号
 	 */
 	private Integer id;
@@ -36,10 +46,6 @@ public class AppInfo {
 	 * 更新时间
 	 */
 	private Date updateDate;
-	/**
-	 *	状态
-	 */
-	private Integer status;
 	/**
 	 * 用户ID
 	 */
@@ -242,12 +248,6 @@ public class AppInfo {
 	}
 	public void setVersionId(Integer versionId) {
 		this.versionId = versionId;
-	}
-	public Integer getStatus() {
-		return status;
-	}
-	public void setStatus(Integer status) {
-		this.status = status;
 	}
 	
 	

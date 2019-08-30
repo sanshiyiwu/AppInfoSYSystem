@@ -13,7 +13,4 @@
 	<select id="getBackendUserById" resultType="BackendUser" parameterType="BackendUser">
 		select * from backend_user where id=#{id}
 	</select>
-	<select id="checkUserCode" resultType="BackendUser" parameterType="string">
-		select * from backend_user where userCode=#{userCode}
-	</select>
 </mapper>

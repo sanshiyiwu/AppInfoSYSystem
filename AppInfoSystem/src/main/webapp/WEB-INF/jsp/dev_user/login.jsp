@@ -49,16 +49,23 @@
             </div>
             <div id="register" class="animate form">
                 <section class="login_content" id="regist">
-                    <form action="javascript:;" id="devRegistForm">
-                        <h1>开发者注册</h1>
+                    <form action="">
+                        <h1>注册界面</h1>
                         <div>
-                        	<input type="hidden" value="" name="id"/><br>
-                            <input type="text" class="form-control" name="devCode" id="devCode" placeholder="请输入用户名" required="" /><span style="color:red;" id="error"></span><br>
-                            <input type="text" class="form-control" name="devName" placeholder="用户真实姓名" required="" /><br>
-                            <input type="password" class="form-control" name="password" placeholder="密码" required="" /><br>
-                       		<span style="font-color:red;">${error }</span>
-                            <input type="submit" class="btn btn-default submit" id="registButton" value="注册" disabled="disabled">
-                            <input type="reset" class="btn btn-default submit" value="重填">
+                            <input type="text" class="form-control" placeholder="用户名" required="" />
+                            <input type="text" class="form-control" placeholder="用户真实姓名" required="" />
+                            <input type="password" class="form-control" placeholder="密码" required="" />
+                            <div class="input-out">
+                           	 性别：<input type="radio"  name="gender" value="1" checked="checked"/>男
+				  				  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="gender" value="2"/>女
+				  			</div>
+				  			<br>
+				  			<input type="number" class="form-control" name="age" placeholder="年龄" required="" min="1" max="100"/><br/> 
+                            <input type="email" class="form-control" placeholder="电子邮箱" required="" />
+                            
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" href="index.html">注册</a>
                         </div>
                         <div class="clearfix"></div>
                         <div class="separator">
@@ -83,7 +90,7 @@
 	}
 	$("#login>form").submit(function(){
 		$.ajax({
-			url:"<%=request.getContextPath() %>/dev_user/devLoginCheck",
+			url:"<%=request.getContextPath() %>/dev_user/loginCheck",
 			data:$("#login>form").serialize(),
 			type:"POST",
 			dataType:"html",
@@ -92,36 +99,12 @@
 			}
 		});
 	});
-	$("#devCode").blur(checkDevUserCode);
-	function checkDevUserCode(){
-		var devCode=$("#devCode").val();
-		$.ajax({
-			url:"<%=request.getContextPath() %>/dev_user/devRegistCheck",
-			data:{"devCode":devCode},
-			type:"get",
-			dataType:"json",
-			success:function(data){
-				if(data.devCode=="exist"){
-					$("#devCode").next().html("用户已存在！");
-					$("#registButton").attr("disabled","disabled");
-					return true;
-				}else{
-					$("#devCode").next().html("用户名可使用！");
-					$("#registButton").removeAttr("disabled");
-					return false;
-				}
-			}
-		});
-	};
 	$("#regist>form").submit(function(){
-		var data=new FormData(document.getElementById("registForm"));
 		$.ajax({
-			url:"<%=request.getContextPath()%>/backend_user/backRegistSave",
-			data:data,
+			url:"<%=request.getContextPath() %>/dev_user/loginCheck",
+			data:$("#regist>form").serialize(),
 			type:"POST",
 			dataType:"html",
-			processData:false,
-			contentType:false,
 			success:function(data){
 				$("body").html(data);
 			}

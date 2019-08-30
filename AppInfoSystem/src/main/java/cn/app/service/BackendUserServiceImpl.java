@@ -35,17 +35,10 @@ public class BackendUserServiceImpl implements BackendUserService{
 		return backendUserMapper.addBackendUser(backendUser);
 	}
 	/**
-	 * 注册验证
-	 */
-	public BackendUser checkUserCode(String userCode) {
-		return backendUserMapper.checkUserCode(userCode);
-	}
-	/**
 	 * 根据ID查询后台用户
 	 */
 	public BackendUser getBackendUserById(Integer id) {
 		return backendUserMapper.getBackendUserById(id);
 	}
-	
 	
 }

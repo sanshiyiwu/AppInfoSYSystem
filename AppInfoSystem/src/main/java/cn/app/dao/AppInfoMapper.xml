@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.app.dao.AppInfoMapper">
+ 	<!-- 添加app基础信息 -->
+ 	<insert id="addAppInfo" parameterType="AppInfo">
+ 		insert into app_info (softwareName,APKName,
+ 			supportROM,interfaceLanguage,softwareSize,
+ 			downloads,flatformId,categoryLevel1,
+ 			categoryLevel2,categoryLevel3,status,
+ 			appInfo,logoLocPath,createdBy,modifyDate) 
+ 			values(#{softwareName},#{APKName},
+ 			#{supportROM},#{interfaceLanguage},#{softwareSize},
+ 			#{downloads},#{flatFormId},#{categoryLevel1},
+ 			#{categoryLevel2},#{categoryLevel3},#{status},
+ 			#{appInfo},#{logoLocPath},#{createdBy},#{modifyDate});
+ 	</insert>
+ 	<!-- 修改app基础信息 -->
+ 	<update id="updeteInfo" parameterType="AppInfo">
+ 		update app_info set softwareName=#{softwareName},
+ 			APKName=#{APKName},supportROM=#{supportROM},
+ 			interfaceLanguage=#{interfaceLanguage},
+ 			softwareSize=#{softwareSize},
+			downloads=#{downloads},flatformId=#{flatFormId},
+			categoryLevel1=#{categoryLevel1},
+			categoryLevel2=#{categoryLevel2},
+			categoryLevel3=#{categoryLevel3},status=#{status},
+			appInfo=#{appInfo},logoLocPath=#{logoLocPath},
+			modifyBy=#{modifyBy},modifyDate=#{modifyDate}
+ 		where id=#{id}
+ 	</update>
+ 	<!-- 通过APKname查询 -->
+ 	<select id="getAppInfoByAPKName" parameterType="string"
+ 		resultType="AppInfo">
+ 		select * from app_info where APKName=#{APKName}
+ 	</select>
+ 	<!-- 通过主键获取 -->
+ 	<select id="getAppInfoById" parameterType="int" 
+ 		resultType="AppInfo">
+ 		select * from app_info where id=#{id}
+ 	</select>
+</mapper>

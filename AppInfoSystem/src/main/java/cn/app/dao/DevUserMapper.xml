@@ -13,7 +13,4 @@
 	<select id="getDevUserById" resultType="DevUser" parameterType="DevUser">
 		select * from dev_user where id=#{id}
 	</select>
-	<select id="checkUserCode" parameterType="String" resultType="DevUser">
-		select * from dev_user where devCode=#{devCode}
-	</select>
 </mapper>
